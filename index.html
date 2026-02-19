@@ -368,10 +368,78 @@
       </div>
     </section>
 
+    <!-- FC / Franchise Section -->
+    <section class="fc" id="fc">
+      <div class="fc__inner">
+        <h2 class="section-title section-title--light">
+          <span class="section-title__en">FRANCHISE</span>
+          <span class="section-title__ja">工務店の皆様へ</span>
+        </h2>
+        <p class="fc__lead">LIFE X フランチャイズ加盟で、貴社の事業を次のステージへ。</p>
+        <div class="fc__merits">
+          <div class="fc__merit">
+            <span class="fc__merit-num">01</span>
+            <h3>集客力のある商品</h3>
+            <p>高性能×低価格の規格住宅で新規顧客を獲得</p>
+          </div>
+          <div class="fc__merit">
+            <span class="fc__merit-num">02</span>
+            <h3>設計・プランの標準化</h3>
+            <p>打ち合わせ工数を大幅削減し、業務効率UP</p>
+          </div>
+          <div class="fc__merit">
+            <span class="fc__merit-num">03</span>
+            <h3>充実のサポート体制</h3>
+            <p>研修・マーケティング支援で安心の導入</p>
+          </div>
+        </div>
+        <a href="#contact" class="fc__btn">FC加盟について詳しく見る</a>
+      </div>
+    </section>
+
     <!-- Contact Section -->
-    <section class="section" id="contact">
-      <div class="section__inner">
-        <!-- Contact content placeholder -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <h2 class="section-title">
+          <span class="section-title__en">CONTACT</span>
+          <span class="section-title__ja">まずは無料で資料請求</span>
+        </h2>
+        <p class="contact__lead">LIFE Xの詳しい資料をお届けします。お気軽にお問い合わせください。</p>
+        <form class="contact__form" action="#" method="post">
+          <div class="contact__form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+          </div>
+          <div class="contact__form-group">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" placeholder="090-1234-5678">
+          </div>
+          <div class="contact__form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@email.com">
+          </div>
+          <div class="contact__form-group">
+            <label for="inquiry_type">お問い合わせ種別</label>
+            <select id="inquiry_type" name="inquiry_type">
+              <option value="">選択してください</option>
+              <option value="catalog">資料請求</option>
+              <option value="visit">モデルハウス見学予約</option>
+              <option value="fc">FC加盟について</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div class="contact__form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="4" placeholder="ご質問やご要望をご記入ください"></textarea>
+          </div>
+          <div class="contact__privacy">
+            <label>
+              <input type="checkbox" name="privacy" required>
+              <a href="#" target="_blank">プライバシーポリシー</a>に同意する
+            </label>
+          </div>
+          <button type="submit" class="contact__submit">送信する</button>
+        </form>
       </div>
     </section>
 
@@ -380,8 +448,19 @@
   <!-- ====================================================================
        Footer
        ==================================================================== -->
-  <footer id="footer">
-    <!-- Footer placeholder -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__logo">LIFE X</div>
+      <div class="footer__info">
+        <p>株式会社Gハウス</p>
+        <p>TEL: 000-000-0000</p>
+      </div>
+      <div class="footer__links">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">会社概要</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 LIFE X by 株式会社Gハウス. All Rights Reserved.</p>
+    </div>
   </footer>
 
   <!-- Scripts -->

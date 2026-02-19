@@ -1095,3 +1095,269 @@ main {
     height: 220px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Section Title — Light Modifier (for dark backgrounds)
+   -------------------------------------------------------------------------- */
+.section-title--light .section-title__en {
+  color: var(--color-white);
+}
+
+.section-title--light .section-title__ja {
+  color: var(--color-white);
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   FC / Franchise Section
+   -------------------------------------------------------------------------- */
+.fc {
+  background-color: var(--color-main);
+  padding: 100px 0;
+}
+
+.fc__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fc__lead {
+  color: var(--color-white);
+  text-align: center;
+  font-size: 1.125rem;
+  margin-bottom: 60px;
+}
+
+.fc__merits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.fc__merit {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.fc__merit-num {
+  font-family: var(--font-en);
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.fc__merit h3 {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.fc__merit p {
+  color: var(--color-white);
+  opacity: 0.8;
+  font-size: 0.875rem;
+  margin-top: 12px;
+}
+
+.fc__btn {
+  display: block;
+  width: fit-content;
+  margin: 60px auto 0;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  padding: 16px 48px;
+  font-weight: 700;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.fc__btn:hover {
+  opacity: 0.85;
+}
+
+/* FC — Mobile */
+@media screen and (max-width: 768px) {
+  .fc {
+    padding: 60px 0;
+  }
+
+  .fc__lead {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .fc__merits {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .fc__merit {
+    padding: 30px 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Contact Section
+   -------------------------------------------------------------------------- */
+.contact {
+  background-color: var(--color-bg);
+  padding: 100px 0;
+}
+
+.contact__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact__lead {
+  text-align: center;
+  color: #666666;
+  font-size: 1rem;
+  margin-bottom: 48px;
+}
+
+.contact__form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact__form-group {
+  margin-bottom: 24px;
+}
+
+.contact__form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-main);
+  margin-bottom: 8px;
+}
+
+.contact__form-group .required {
+  color: #e53e3e;
+  font-size: 0.75rem;
+  margin-left: 4px;
+}
+
+.contact__form-group input,
+.contact__form-group select,
+.contact__form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact__form-group input:focus,
+.contact__form-group select:focus,
+.contact__form-group textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.contact__privacy {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.875rem;
+}
+
+.contact__privacy a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.contact__submit {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  font-size: 1.125rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 32px;
+  transition: opacity 0.3s ease;
+}
+
+.contact__submit:hover {
+  opacity: 0.85;
+}
+
+/* Contact — Mobile */
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact__lead {
+    margin-bottom: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: #1a2744;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__logo {
+  font-family: var(--font-en);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
+}
+
+.footer__info p {
+  color: var(--color-white);
+  opacity: 0.7;
+  font-size: 0.875rem;
+  line-height: 2;
+}
+
+.footer__links {
+  margin-top: 24px;
+}
+
+.footer__links a {
+  color: var(--color-white);
+  opacity: 0.6;
+  font-size: 0.8125rem;
+  margin: 0 16px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer__links a:hover {
+  opacity: 1;
+}
+
+.footer__copy {
+  margin-top: 40px;
+  color: var(--color-white);
+  opacity: 0.4;
+  font-size: 0.75rem;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
