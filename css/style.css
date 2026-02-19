@@ -1,0 +1,308 @@
+/* ==========================================================================
+   LIFE X Landing Page — Main Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties
+   -------------------------------------------------------------------------- */
+:root {
+  --color-main: #1a2744;
+  --color-accent: #c8a96e;
+  --color-bg: #f8f6f3;
+  --color-text: #333333;
+  --color-white: #ffffff;
+  --font-ja: 'Noto Sans JP', sans-serif;
+  --font-en: 'Cormorant Garamond', serif;
+  --max-width: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   Base Styles
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-ja);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* --------------------------------------------------------------------------
+   Section Common Styles
+   -------------------------------------------------------------------------- */
+.section {
+  padding: 80px 0;
+}
+
+.section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section__title {
+  font-family: var(--font-en);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-main);
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+}
+
+.section__subtitle {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   Utility
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(26, 39, 68, 0.95);
+  transition: background-color 0.3s ease;
+}
+
+.header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header__logo-text {
+  font-family: var(--font-en);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+}
+
+/* Navigation */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.header__nav-list li a {
+  font-size: 0.875rem;
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.header__nav-list li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.header__nav-list li a:hover {
+  color: var(--color-accent);
+}
+
+.header__nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.header__cta-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.header__cta-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Hamburger Button (hidden on desktop) */
+.header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.header__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header__hamburger span:nth-child(1) {
+  transform: translateY(-6px);
+}
+
+.header__hamburger span:nth-child(2) {
+  transform: translateY(0);
+}
+
+.header__hamburger span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+/* Hamburger Active State — X animation */
+.header__hamburger.is-active span:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.header__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger.is-active span:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Styles (768px and below)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .header__inner {
+    height: 60px;
+  }
+
+  .header__logo-text {
+    font-size: 1.4rem;
+  }
+
+  /* Hide desktop nav and CTA */
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: rgba(26, 39, 68, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s ease;
+    z-index: 1050;
+  }
+
+  .header__nav.is-open {
+    right: 0;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__nav-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__nav-list li a {
+    display: block;
+    padding: 20px 0;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .header__nav-list li a::after {
+    display: none;
+  }
+
+  .header__cta-btn {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .header__hamburger {
+    display: flex;
+  }
+
+  /* Section adjustments */
+  .section {
+    padding: 60px 0;
+  }
+
+  .section__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile menu overlay background */
+.header__nav.is-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content — push down for fixed header
+   -------------------------------------------------------------------------- */
+main {
+  padding-top: 72px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 60px;
+  }
+}
