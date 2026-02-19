@@ -567,3 +567,531 @@ main {
     padding: 32px 24px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Section Title (shared bilingual heading pattern)
+   -------------------------------------------------------------------------- */
+.section-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-title__en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 3rem;
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+}
+
+.section-title__ja {
+  display: block;
+  font-family: var(--font-ja);
+  font-size: 0.875rem;
+  color: var(--color-main);
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   Reasons Section
+   -------------------------------------------------------------------------- */
+.reasons {
+  background-color: var(--color-bg);
+  padding: 100px 0;
+}
+
+.reasons__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Each reason card */
+.reason {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.reason:last-child {
+  margin-bottom: 0;
+}
+
+/* Alternating layout — image on right */
+.reason--right .reason__image {
+  order: 2;
+}
+
+.reason--right .reason__content {
+  order: 1;
+}
+
+/* Reason image */
+.reason__image {
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ddd 0%, #eee 100%);
+  min-height: 300px;
+}
+
+.reason__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 300px;
+}
+
+/* Reason content */
+.reason__content {
+  position: relative;
+}
+
+/* Reason number */
+.reason__number {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 120px;
+  font-weight: 600;
+  color: var(--color-accent);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: -20px;
+}
+
+/* Reason title */
+.reason__title {
+  margin-bottom: 20px;
+}
+
+.reason__title-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.reason__title-ja {
+  display: block;
+  font-family: var(--font-ja);
+  font-size: 1.25rem;
+  color: var(--color-main);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Reason text elements */
+.reason__text {
+  font-weight: 400;
+  line-height: 2.0;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.reason__note {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+}
+
+.reason__detail {
+  font-size: 0.875rem;
+  color: #888888;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.reason__highlight {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: var(--color-main);
+}
+
+/* --------------------------------------------------------------------------
+   Mid-page CTA
+   -------------------------------------------------------------------------- */
+.mid-cta {
+  background-color: var(--color-main);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.mid-cta__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mid-cta__text {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.mid-cta__btn {
+  display: inline-block;
+  padding: 16px 48px;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mid-cta__btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(200, 169, 110, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Reasons & Mid CTA — Mobile
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .section-title__en {
+    font-size: 2rem;
+  }
+
+  .reasons {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .reason {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  /* Reset order on mobile — image always on top */
+  .reason--right .reason__image {
+    order: unset;
+  }
+
+  .reason--right .reason__content {
+    order: unset;
+  }
+
+  .reason__number {
+    font-size: 80px;
+    margin-bottom: -12px;
+  }
+
+  .reason__image {
+    min-height: 200px;
+  }
+
+  .reason__image img {
+    min-height: 200px;
+  }
+
+  .mid-cta {
+    padding: 40px 0;
+  }
+
+  .mid-cta__text {
+    font-size: 1rem;
+  }
+
+  .mid-cta__btn {
+    padding: 14px 36px;
+    font-size: 0.9375rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Product Section (PREMIUM FULL PACKAGE)
+   -------------------------------------------------------------------------- */
+.product {
+  background-color: var(--color-white);
+  padding: 100px 0;
+}
+
+.product__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.product__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.product__item {
+  background-color: #f8f6f3;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.product__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: rgba(200, 169, 110, 0.1);
+  color: var(--color-accent);
+}
+
+.product__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.product__item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.product__item p {
+  font-size: 0.875rem;
+  color: #666666;
+  line-height: 1.6;
+}
+
+/* Product — Mobile */
+@media screen and (max-width: 768px) {
+  .product {
+    padding: 60px 0;
+  }
+
+  .product__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product__item {
+    padding: 30px 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Model House Section
+   -------------------------------------------------------------------------- */
+.modelhouse {
+  background-color: var(--color-bg);
+  padding: 100px 0;
+}
+
+.modelhouse__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.modelhouse__gallery {
+  margin-bottom: 0;
+}
+
+.modelhouse__main-image {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ddd 0%, #eee 100%);
+}
+
+.modelhouse__main-image img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.modelhouse__sub-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.modelhouse__sub-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: linear-gradient(135deg, #ddd 0%, #eee 100%);
+}
+
+.modelhouse__info {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.modelhouse__info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 16px;
+}
+
+.modelhouse__badge {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.modelhouse__address {
+  color: #666666;
+  margin-top: 12px;
+  font-size: 0.9375rem;
+}
+
+.modelhouse__btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 48px;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modelhouse__btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(200, 169, 110, 0.4);
+}
+
+/* Model House — Mobile */
+@media screen and (max-width: 768px) {
+  .modelhouse {
+    padding: 60px 0;
+  }
+
+  .modelhouse__sub-images {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .modelhouse__sub-images img {
+    height: 180px;
+  }
+
+  .modelhouse__info h3 {
+    font-size: 1.25rem;
+  }
+
+  .modelhouse__btn {
+    padding: 14px 36px;
+    font-size: 0.9375rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Works / Case Studies Section
+   -------------------------------------------------------------------------- */
+.works {
+  background-color: var(--color-white);
+  padding: 100px 0;
+}
+
+.works__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.works__item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  background-color: var(--color-white);
+}
+
+.works__image {
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ddd 0%, #eee 100%);
+}
+
+.works__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.works__item:hover .works__image img {
+  transform: scale(1.05);
+}
+
+.works__item-info {
+  padding: 20px;
+  background-color: var(--color-white);
+}
+
+.works__item-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-main);
+  margin-bottom: 4px;
+}
+
+.works__item-info p {
+  font-size: 0.8125rem;
+  color: #888888;
+}
+
+/* Works — Mobile */
+@media screen and (max-width: 768px) {
+  .works {
+    padding: 60px 0;
+  }
+
+  .works__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .works__image {
+    height: 220px;
+  }
+}
